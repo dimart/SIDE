@@ -1,0 +1,11 @@
+﻿<Window x:Class="Side.Shell.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Side.Shell"
+        Title="SIDE" Height="300" Width="300">
+    <Border>
+        <DockPanel>
+            <Button DockPanel.Dock="Bottom">Don't bother me, man...</Button>
+        </DockPanel>
+    </Border>
+</Window>
