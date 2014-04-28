@@ -7,8 +7,8 @@
     <ProjectGuid>{6464BCF9-E744-484F-BF4E-0453505F6106}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Side.Logger</RootNamespace>
-    <AssemblyName>Side.Logger</AssemblyName>
+    <RootNamespace>Side.CodeBox</RootNamespace>
+    <AssemblyName>Side.CodeBox</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

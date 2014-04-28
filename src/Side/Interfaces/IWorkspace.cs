@@ -6,8 +6,8 @@ namespace Side.Interfaces
 {
     public interface IWorkspace
     {
-        ObservableCollection<ContentViewModel> Documents { get; set; }
-        ContentViewModel ActiveDocument { get; set; }
+        // ObservableCollection<ContentViewModel> Documents { get; set; }
+        // ContentViewModel ActiveDocument { get; set; }
         string Title { get; }
     }
 }
