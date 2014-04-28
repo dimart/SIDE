@@ -1,0 +1,6 @@
+﻿<UserControl x:Class="Side.CodeBox.CodeBoxView" x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <TextBox Margin="5" Text="CodeBox" IsReadOnly="True" BorderBrush="White" Foreground="Green" FontSize="24" FontWeight="Bold">
+    </TextBox>
+</UserControl>
