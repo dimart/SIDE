@@ -3,7 +3,7 @@
              xmlns:scintilla="clr-namespace:ScintillaNET;assembly=ScintillaNET"
              xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <WindowsFormsHost Name="wfh">
-        <scintilla:Scintilla Name="CodeBox"></scintilla:Scintilla>
+    <WindowsFormsHost Name="wfh" Width="400" Height="400">
+        <scintilla:Scintilla Name="CodeBox" Width="400" Height="400"></scintilla:Scintilla>
     </WindowsFormsHost>
 </UserControl>

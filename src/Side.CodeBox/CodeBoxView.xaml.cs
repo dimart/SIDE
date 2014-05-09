@@ -29,7 +29,7 @@ namespace Side.CodeBox
             // ; 
 
             // Codebox configuration from JaNE.xml
-            codeBox.ConfigurationManager.Language = "side";
+            codeBox.ConfigurationManager.Language = "suffle";
             codeBox.ConfigurationManager.CustomLocation = @"side.xml";
             codeBox.ConfigurationManager.Configure();
 
