@@ -1,6 +1,9 @@
 ﻿<UserControl x:Class="Side.CodeBox.CodeBoxView" x:ClassModifier="internal"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:scintilla="clr-namespace:ScintillaNET;assembly=ScintillaNET"
+             xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <TextBox Margin="5" Text="CodeBox" IsReadOnly="True" BorderBrush="White" Foreground="Green" FontSize="24" FontWeight="Bold">
-    </TextBox>
+    <WindowsFormsHost Name="wfh">
+        <scintilla:Scintilla Name="CodeBox"></scintilla:Scintilla>
+    </WindowsFormsHost>
 </UserControl>

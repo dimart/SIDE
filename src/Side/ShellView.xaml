@@ -3,8 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
         xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
         xmlns:prism="http://www.codeplex.com/prism"
-        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-        xmlns:scintilla="clr-namespace:ScintillaNET;assembly=ScintillaNET"
         Title="SIDE"
         WindowStartupLocation="CenterScreen" 
         WindowState="Maximized">
@@ -71,9 +69,7 @@
                     </StackPanel>
                 </StatusBarItem>
             </StatusBar>
-            <WindowsFormsHost Name="wfh">
-                <scintilla:Scintilla Name="CodeBox"></scintilla:Scintilla>
-            </WindowsFormsHost>
+            <ItemsControl Name="CodeBoxRegion" prism:RegionManager.RegionName="CodeBoxRegion"/>
         </DockPanel>
     </Border>
 </Window>

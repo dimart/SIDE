@@ -31,7 +31,7 @@ namespace Side
 
         protected override IModuleCatalog CreateModuleCatalog()
         {
-            return new DirectoryModuleCatalog() { ModulePath = @".\modules" };
+            return new DirectoryModuleCatalog() { ModulePath = @".\" };
         }
 
         protected override void InitializeModules()
