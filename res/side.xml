@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScintillaNET>
-    <Language Name="side">
+    <Language Name="suffle">
         <Lexer LexerName="cpp"/>
         <Lexer LineCommentPrefix="//" StreamCommentPrefix="/*" StreamCommentSuffix="*/" >
-            <Keywords List="0">class static import new interface null return final for while do break continue super if else </Keywords>
-            <Keywords List="1">void int string String byte</Keywords>
+            <Keywords List="0">unit bool int char true false </Keywords>
+            <Keywords List="1"> if then else end let in case of val fun datatype
+            </Keywords>
             <Properties>
         		<Property Name="fold.comment" Value="1" />
       		</Properties>
@@ -23,7 +24,7 @@
 
         <AutoComplete FillUpCharacters="" SingleLineAccept="True" IsCaseSensitive="False">
         <List>
-        	class static import new interface return final break continue super void int string byte
+          unit bool int char true false if then else end let in case of val fun datatype
         </List>
         </AutoComplete>	
 
