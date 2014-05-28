@@ -14,8 +14,8 @@ namespace Side
     {
         protected override void ConfigureContainer()
         {
-            base.ConfigureContainer();
             Container.RegisterType<IShell, ShellView>(new ContainerControlledLifetimeManager());
+            base.ConfigureContainer();
         }
 
         protected override DependencyObject CreateShell()
@@ -25,6 +25,7 @@ namespace Side
 
         protected override void InitializeShell()
         {
+            base.InitializeShell();
             Application.Current.MainWindow = (Window) Shell;
             (Shell as Window).Show();
         }
@@ -40,6 +41,7 @@ namespace Side
             coreModule.Initialize();
 
             base.InitializeModules();
+            Application.Current.MainWindow.DataContext = Container.Resolve<IWorkspace>();
         }
     }
 }
