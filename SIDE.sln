@@ -5,8 +5,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SIDE", "SIDE", "{7DE5A6B2-B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Side", "src\Side\Side.csproj", "{CA660E93-2B22-47E7-9F91-1E0AA635138D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Side.CodeBox", "src\Side.CodeBox\Side.CodeBox.csproj", "{6464BCF9-E744-484F-BF4E-0453505F6106}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,17 +15,12 @@ Global
 		{CA660E93-2B22-47E7-9F91-1E0AA635138D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA660E93-2B22-47E7-9F91-1E0AA635138D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA660E93-2B22-47E7-9F91-1E0AA635138D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6464BCF9-E744-484F-BF4E-0453505F6106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6464BCF9-E744-484F-BF4E-0453505F6106}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6464BCF9-E744-484F-BF4E-0453505F6106}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6464BCF9-E744-484F-BF4E-0453505F6106}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CA660E93-2B22-47E7-9F91-1E0AA635138D} = {7DE5A6B2-B37C-4314-90CC-18705E0B0D6A}
-		{6464BCF9-E744-484F-BF4E-0453505F6106} = {7DE5A6B2-B37C-4314-90CC-18705E0B0D6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
