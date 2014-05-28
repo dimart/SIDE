@@ -11,10 +11,10 @@ namespace Side.Interfaces
     {
         #region Members
 
-        protected IWorkspace     m_workspace;
-        protected string         m_title = null;
-        protected ILoggerService m_logger;
-
+        protected IWorkspace     _workspace;
+        protected ILoggerService _logger;
+        protected string _title = null;
+        
         #endregion
 
         #region CTOR
@@ -24,10 +24,10 @@ namespace Side.Interfaces
         /// </summary>
         /// <param name="workspace">The injected workspace.</param>
         /// <param name="logger">The injected logger.</param>
-        protected ContentViewModel(AbstractWorkspace workspace, ILoggerService logger)
+        protected ContentViewModel(IWorkspace workspace, ILoggerService logger)
         {
-            m_workspace = workspace;
-            m_logger = logger;
+            _workspace = workspace;
+            _logger = logger;
         }
 
         #endregion

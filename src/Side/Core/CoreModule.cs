@@ -41,7 +41,7 @@ namespace Side.Core
 
         public void Initialize()
         {
-            m_container.RegisterType<AbstractWorkspace, Workspace>(new ContainerControlledLifetimeManager());
+            m_container.RegisterType<IWorkspace, Workspace>(new ContainerControlledLifetimeManager());
             m_container.RegisterType<ILoggerService, NLogService>(new ContainerControlledLifetimeManager());
         }
 
