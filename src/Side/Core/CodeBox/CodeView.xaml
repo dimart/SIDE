@@ -2,5 +2,5 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <avalonEdit:TextEditor Name="CodeEditor"></avalonEdit:TextEditor>
+    <avalonEdit:TextEditor Name="CodeEditor" Document="{Binding Code}"></avalonEdit:TextEditor>
 </UserControl>
