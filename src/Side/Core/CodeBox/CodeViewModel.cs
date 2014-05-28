@@ -1,8 +1,6 @@
-﻿using System.Windows.Controls;
-
-namespace Side.Core.CodeBox
+﻿namespace Side.Core.CodeBox
 {
-    class CodeViewModel
+    public class CodeViewModel
     {
         private CodeModel _model;
         

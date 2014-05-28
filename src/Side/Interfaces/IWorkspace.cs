@@ -1,13 +1,13 @@
 ﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Windows.Media;
+using Side.Core.CodeBox;
 
 namespace Side.Interfaces
 {
     public interface IWorkspace
     {
-        // ObservableCollection<ContentViewModel> Documents { get; set; }
-        // ContentViewModel ActiveDocument { get; set; }
+        ObservableCollection<CodeViewModel> Documents { get; set; }
+        CodeViewModel ActiveDocument { get; set; }
+
         string Title { get; }
     }
 }
