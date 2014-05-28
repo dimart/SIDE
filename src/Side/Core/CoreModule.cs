@@ -19,20 +19,20 @@ namespace Side.Core
     [ModuleDependency("Side.CodeBox")]
     public class CoreModule : IModule
     {
-        private readonly IUnityContainer m_container;
+        private readonly IUnityContainer _container;
 
-        private IEventAggregator m_eventAggregator;
+        private IEventAggregator _eventAggregator;
         private IEventAggregator EventAggregator
         {
-            get { return m_eventAggregator; }
+            get { return _eventAggregator; }
         }
 
         #region CTOR
         
         public CoreModule(IUnityContainer container, IEventAggregator eventAggregator)
         {
-            m_container = container;
-            m_eventAggregator = eventAggregator;
+            _container = container;
+            _eventAggregator = eventAggregator;
         }
 
         #endregion
@@ -41,12 +41,12 @@ namespace Side.Core
 
         public void Initialize()
         {
-            m_container.RegisterType<IWorkspace, Workspace>(new ContainerControlledLifetimeManager());
-            m_container.RegisterType<ILoggerService, NLogService>(new ContainerControlledLifetimeManager());
-
-            m_container.RegisterType<CodeModel>();
-            m_container.RegisterType<CodeView>();
-            m_container.RegisterType<CodeViewModel>();
+            _container.RegisterType<IWorkspace, Workspace>(new ContainerControlledLifetimeManager());
+            _container.RegisterType<ILoggerService, NLogService>(new ContainerControlledLifetimeManager());
+            
+            _container.RegisterType<CodeModel>();
+            _container.RegisterType<CodeView>();
+            _container.RegisterType<CodeViewModel>();
         }
 
         #endregion

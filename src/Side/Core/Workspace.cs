@@ -1,30 +1,42 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.IO;
+using System.Windows.Forms;
+using System.Windows.Input;
+using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Unity;
 using Side.Core.CodeBox;
 using Side.Interfaces;
+using Side.Interfaces.Events;
 using Side.Interfaces.Services;
 
 namespace Side.Core
 {
-    class Workspace : IWorkspace
+    class Workspace : ViewModelBase, IWorkspace
     {
         private IUnityContainer _container;
         private IEventAggregator _eventAggregator;
-        private ILoggerService _logger;
 
         private ObservableCollection<CodeViewModel> _docs = new ObservableCollection<CodeViewModel>();
         private CodeViewModel _activeDocument;
 
         private string _document;
         private const string _title = "Simple IDE";
-        
+
         #region CTOR
 
         public Workspace(IUnityContainer container, IEventAggregator eventAggregator)
         {
             _container = container;
             _eventAggregator = eventAggregator;
+
+            _docs = new ObservableCollection<CodeViewModel>();
+            _docs.CollectionChanged += Docs_CollectionChanged;
+
+            _eventAggregator.GetEvent<ActiveContentChangedEvent>().Subscribe(ContentChanged);
             _document = "";
         }
 
@@ -55,9 +67,39 @@ namespace Side.Core
 
         #endregion
 
-        private ILoggerService Logger
+        private void ContentChanged(CodeViewModel model)
         {
-            get { return _logger ?? (_logger = _container.Resolve<ILoggerService>()); }
+            _document = model == null ? "" : model.Title;
+            RaisePropertyChanged("Title");
+        }
+
+        protected void ModelChangedEventHandler(object sender, PropertyChangedEventArgs e)
+        {
+            string newValue = ActiveDocument == null ? "" : ActiveDocument.Title;
+            if (_document == newValue) return;
+            _document = newValue;
+            RaisePropertyChanged("Title");
+        }
+
+        private void Docs_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.OldItems != null)
+            {
+                foreach (INotifyPropertyChanged item in e.OldItems)
+                    item.PropertyChanged -= ModelChangedEventHandler;
+            }
+
+            if (e.NewItems != null)
+            {
+                foreach (INotifyPropertyChanged item in e.NewItems)
+                    item.PropertyChanged += ModelChangedEventHandler;
+            }
+
+            if (e.Action != NotifyCollectionChangedAction.Remove) return;
+            if (_docs.Count == 0)
+            {
+                this.ActiveDocument = null;
+            }
         }
     }
 }

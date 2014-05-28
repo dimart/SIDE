@@ -99,15 +99,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Core\ActiveDocumentConverter.cs" />
     <Compile Include="Core\CodeBox\CodeModel.cs" />
     <Compile Include="Core\CodeBox\CodeViewModel.cs" />
     <Compile Include="Core\CoreModule.cs" />
+    <Compile Include="Core\PanesTemplateSelector.cs" />
     <Compile Include="Core\Services\NLogService.cs" />
     <Compile Include="Core\CodeBox\CodeView.xaml.cs">
       <DependentUpon>CodeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core\Workspace.cs" />
-    <Compile Include="Interfaces\ContentViewModel.cs" />
+    <Compile Include="Interfaces\Events\ActiveContentChangedEvent.cs" />
     <Compile Include="Interfaces\Events\LogEvent.cs" />
     <Compile Include="Interfaces\IShell.cs" />
     <Compile Include="Interfaces\IWorkspace.cs" />

@@ -9,7 +9,7 @@ using Side.Interfaces.Events;
 
 namespace Side.Core.Services
 {
-    class NLogService : ILoggerService
+    public class NLogService : ILoggerService
     {
         private static readonly Logger Logger = LogManager.GetLogger("Side");
         private readonly IEventAggregator _aggregator;
