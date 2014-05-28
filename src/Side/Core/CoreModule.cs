@@ -8,7 +8,7 @@ using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Unity;
-
+using Side.Core.CodeBox;
 using Side.Interfaces;
 using Side.Interfaces.Services;
 using Side.Core.Services;
@@ -43,6 +43,10 @@ namespace Side.Core
         {
             m_container.RegisterType<IWorkspace, Workspace>(new ContainerControlledLifetimeManager());
             m_container.RegisterType<ILoggerService, NLogService>(new ContainerControlledLifetimeManager());
+
+            m_container.RegisterType<CodeModel>();
+            m_container.RegisterType<CodeView>();
+            m_container.RegisterType<CodeViewModel>();
         }
 
         #endregion
