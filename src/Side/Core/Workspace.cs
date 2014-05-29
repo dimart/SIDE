@@ -83,7 +83,7 @@ namespace Side.Core
         {
             get { return new DelegateCommand(
                 () => MessageBox.Show(Interpreter.Interpret(ActiveDocument.Model.Code.Text)), 
-                () => Interpreter != null && ActiveDocument != null); }
+                () => Interpreter != null); }
         }
         
         #endregion

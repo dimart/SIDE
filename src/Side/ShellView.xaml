@@ -13,21 +13,9 @@
     </Window.Resources>
     <Border>
         <DockPanel>
-            <!--Menu-->
-            <Menu DockPanel.Dock="Top" IsMainMenu="True" x:Name="SideMainMenu" VerticalAlignment="Top">
-                <MenuItem Header="File">
-                    <MenuItem Header="New"/>
-                    <MenuItem Header="Open..." Command="{Binding OpenFileCommand}"/>
-                </MenuItem>
-                <MenuItem Header="Debug">
-                    <MenuItem Header="Interpret" Command="{Binding InterpretCommand}"/>
-                </MenuItem>
-                <MenuItem Header="Help"/>
-            </Menu>
             <!-- Toolbar TODO: Icons -->
             <Menu DockPanel.Dock="Top">
                 <MenuItem Width="50" Height="24" Header="Open..." Command="{Binding OpenFileCommand}"/>
-                <MenuItem Width="40" Height="24" Header="Save"/>
                 <MenuItem Width="60" Height="24" Header="Interpret" Command="{Binding InterpretCommand}"/>
             </Menu>
             <!--Status bar-->
