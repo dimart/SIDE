@@ -5,6 +5,7 @@ fib1 x =
     | 1 -> 1
     | _ -> fib1 (x - 1) + fib1 (x - 2)   
 end
+
 fun :: int -> int
 fib2 x = 
     let 
@@ -18,13 +19,16 @@ fib2 x =
         fib' 0 1 x
         end
 
+fun :: int -> int -> int
+mod x y = x - (x / y) * y
+
 fun :: int -> int
 fib3 x =
     let 
         fun :: int -> int -> int -> int -> int -> int
         fib' a b p q count =
             if (count == 0) then b
-            else if (count % 2 == 0) then fib' a b ((p*p) + (q*q)) ((q*q) + (2*p*q)) (count / 2)
+            else if ((mod count 2) == 0) then fib' a b ((p*p) + (q*q)) ((q*q) + (2*p*q)) (count / 2)
             else fib' ((b * q) + (a * q) + (a * p)) ((b * p) + (a * q)) p q (count - 1)
             end 
             end
@@ -34,3 +38,9 @@ fib3 x =
         
 val::int 
 x = fib2 6
+
+val::int 
+y = fib2 18
+
+val::int 
+z = fib2 10
