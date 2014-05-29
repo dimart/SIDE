@@ -43,6 +43,7 @@ namespace Side.Core
         {
             _container.RegisterType<IWorkspace, Workspace>(new ContainerControlledLifetimeManager());
             _container.RegisterType<ILoggerService, NLogService>(new ContainerControlledLifetimeManager());
+            _container.RegisterType<IInterpreter, Interpreter>(new ContainerControlledLifetimeManager());
             
             _container.RegisterType<CodeModel>();
             _container.RegisterType<CodeView>();

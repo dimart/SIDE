@@ -74,6 +74,12 @@ namespace Side.Core
         {
             get { return new DelegateCommand(OpenFile, () => true); }
         }
+
+        public ICommand InterpretCommand
+        {
+            get { return new DelegateCommand(() => MessageBox.Show(_container.Resolve<IInterpreter>().Interpret(_container.Resolve<CodeModel>().Code.Text)), () => true); }
+        }
+        
         #endregion
 
         #region CommandsHandlers

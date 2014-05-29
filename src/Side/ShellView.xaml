@@ -20,7 +20,7 @@
                     <MenuItem Header="Open..." Command="{Binding OpenFileCommand}"/>
                 </MenuItem>
                 <MenuItem Header="Debug">
-                    <MenuItem Header="Interpret"/>
+                    <MenuItem Header="Interpret" Command="{Binding InterpretCommand}"/>
                 </MenuItem>
                 <MenuItem Header="Help"/>
             </Menu>

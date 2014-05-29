@@ -104,6 +104,7 @@
     <Compile Include="Core\CodeBox\CodeViewModel.cs" />
     <Compile Include="Core\CoreModule.cs" />
     <Compile Include="Core\PanesTemplateSelector.cs" />
+    <Compile Include="Core\Services\Interpreter.cs" />
     <Compile Include="Core\Services\NLogService.cs" />
     <Compile Include="Core\CodeBox\CodeView.xaml.cs">
       <DependentUpon>CodeView.xaml</DependentUpon>
@@ -113,6 +114,7 @@
     <Compile Include="Interfaces\Events\LogEvent.cs" />
     <Compile Include="Interfaces\IShell.cs" />
     <Compile Include="Interfaces\IWorkspace.cs" />
+    <Compile Include="Interfaces\Services\IInterpreter.cs" />
     <Compile Include="Interfaces\Services\ILoggerService.cs" />
     <Compile Include="Interfaces\ViewModelBase.cs" />
     <Compile Include="ShellView.xaml.cs">
