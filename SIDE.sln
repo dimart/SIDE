@@ -1,9 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SIDE", "SIDE", "{7DE5A6B2-B37C-4314-90CC-18705E0B0D6A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Side", "src\Side\Side.csproj", "{CA660E93-2B22-47E7-9F91-1E0AA635138D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{293BA852-8687-4080-8822-FE2DF01BA272} = {293BA852-8687-4080-8822-FE2DF01BA272}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Side.Interface", "src\Side.Interface\Side.Interface.csproj", "{293BA852-8687-4080-8822-FE2DF01BA272}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,12 +22,17 @@ Global
 		{CA660E93-2B22-47E7-9F91-1E0AA635138D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA660E93-2B22-47E7-9F91-1E0AA635138D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA660E93-2B22-47E7-9F91-1E0AA635138D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{293BA852-8687-4080-8822-FE2DF01BA272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{293BA852-8687-4080-8822-FE2DF01BA272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{293BA852-8687-4080-8822-FE2DF01BA272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{293BA852-8687-4080-8822-FE2DF01BA272}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CA660E93-2B22-47E7-9F91-1E0AA635138D} = {7DE5A6B2-B37C-4314-90CC-18705E0B0D6A}
+		{293BA852-8687-4080-8822-FE2DF01BA272} = {7DE5A6B2-B37C-4314-90CC-18705E0B0D6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35

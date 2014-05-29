@@ -5,6 +5,7 @@ using Side.Core.CodeBox;
 using Side.Interfaces;
 using Side.Interfaces.Events;
 using Side.Interfaces.Services;
+using Microsoft.Practices.Prism.PubSubEvents;
 using Xceed.Wpf.AvalonDock;
 
 namespace Side

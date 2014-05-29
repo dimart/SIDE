@@ -5,9 +5,12 @@ using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
 using System.Windows.Input;
+
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Unity;
+using Microsoft.Practices.Prism.PubSubEvents;
+
 using Side.Core.CodeBox;
 using Side.Interfaces;
 using Side.Interfaces.Events;
@@ -19,6 +22,7 @@ namespace Side.Core
     {
         private IUnityContainer _container;
         private IEventAggregator _eventAggregator;
+        private IInterpreter _interpreter;
 
         private ObservableCollection<CodeViewModel> _docs = new ObservableCollection<CodeViewModel>();
         private CodeViewModel _activeDocument;
@@ -77,7 +81,9 @@ namespace Side.Core
 
         public ICommand InterpretCommand
         {
-            get { return new DelegateCommand(() => MessageBox.Show(_container.Resolve<IInterpreter>().Interpret(ActiveDocument.Model.Code.Text)), () => true); }
+            get { return new DelegateCommand(
+                () => MessageBox.Show(Interpreter.Interpret(ActiveDocument.Model.Code.Text)), 
+                () => Interpreter != null && ActiveDocument != null); }
         }
         
         #endregion
@@ -166,5 +172,24 @@ namespace Side.Core
             }
         }
         #endregion
+
+        private IInterpreter Interpreter
+        {
+            get
+            {
+                if (_interpreter == null)
+                {
+                    try
+                    {
+                        _interpreter = _container.Resolve<IInterpreter>();
+                    }
+                    catch 
+                    {
+                        _container.Resolve<ILoggerService>().Log("Interpreter is not found.", LogCategory.Exception, LogPriority.Medium);
+                    }
+                }
+                return _interpreter;
+            }
+        }
     }
 }

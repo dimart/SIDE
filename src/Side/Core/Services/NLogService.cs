@@ -2,6 +2,7 @@
 using System.Reflection;
 
 using Microsoft.Practices.Prism.Events;
+using Microsoft.Practices.Prism.PubSubEvents;
 using NLog;
 
 using Side.Interfaces.Services;

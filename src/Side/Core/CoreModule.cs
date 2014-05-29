@@ -12,11 +12,12 @@ using Side.Core.CodeBox;
 using Side.Interfaces;
 using Side.Interfaces.Services;
 using Side.Core.Services;
+using Microsoft.Practices.Prism.PubSubEvents;
 
 namespace Side.Core
 {
     [Module(ModuleName = "Side.Core")]
-    [ModuleDependency("Side.CodeBox")]
+    [ModuleDependency("Side.Interpreter")]
     public class CoreModule : IModule
     {
         private readonly IUnityContainer _container;
@@ -43,7 +44,6 @@ namespace Side.Core
         {
             _container.RegisterType<IWorkspace, Workspace>(new ContainerControlledLifetimeManager());
             _container.RegisterType<ILoggerService, NLogService>(new ContainerControlledLifetimeManager());
-            _container.RegisterType<IInterpreter, Interpreter>(new ContainerControlledLifetimeManager());
             
             _container.RegisterType<CodeModel>();
             _container.RegisterType<CodeView>();

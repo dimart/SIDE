@@ -32,7 +32,7 @@ namespace Side
 
         protected override IModuleCatalog CreateModuleCatalog()
         {
-            return new DirectoryModuleCatalog() { ModulePath = @".\" };
+            return new DirectoryModuleCatalog() { ModulePath = @".\..\interpreters\" };
         }
 
         protected override void InitializeModules()
