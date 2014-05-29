@@ -4,8 +4,8 @@ fib1 x =
     | 0 -> 0
     | 1 -> 1
     | _ -> fib1 (x - 1) + fib1 (x - 2)   
-
-fib2 :: int -> int
+end
+fun :: int -> int
 fib2 x = 
     let 
         fun :: int -> int -> int -> int
@@ -13,8 +13,10 @@ fib2 x =
             case n of
             | 0 -> cur
             | _      -> fib' nxt (cur + nxt) (n - 1)
+            end
     in 
         fib' 0 1 x
+        end
 
 fun :: int -> int
 fib3 x =
@@ -28,3 +30,7 @@ fib3 x =
             end
     in
         fib' 1 0 0 1 x
+        end
+        
+val::int 
+x = fib2 6
