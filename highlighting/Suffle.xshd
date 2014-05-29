@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Suffle" extensions=".sfl" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+    <Color name="Comment" foreground="Green" exampleText="// comment" />
+    <Color name="Keywords" fontWeight="bold" foreground="Blue" exampleText="if (a) {} else {}"/>
+    <Color name="Types" foreground="Red" exampleText="object o;" />
+    <Color name="TrueFalse" fontWeight="bold" foreground="DarkCyan" exampleText="b = false; a = true;" />
+    <Color name="ContextKeywords" foreground="Navy" exampleText="var a = from x in y select z;"/>
+    <Color name="Data" foreground="Magenta" exampleText="char linefeed = '\n';"/>
+    
+    
+    <Property name="DocCommentMarker" value="///" />
+    
+    <RuleSet name="CommentMarkerSet">
+        <Keywords fontWeight="bold" foreground="Red">
+            <Word>TODO</Word>
+            <Word>FIXME</Word>
+        </Keywords>
+    </RuleSet>
+
+    <RuleSet>
+        <Span color="Comment">
+            <Begin color="XmlDoc/DocComment">///(?!/)</Begin>
+            <RuleSet>
+                <Import ruleSet="XmlDoc/DocCommentSet"/>
+                <Import ruleSet="CommentMarkerSet"/>
+            </RuleSet>
+        </Span>
+
+        <Span color="Comment" ruleSet="CommentMarkerSet">
+            <Begin>//</Begin>
+        </Span>
+        
+        <Span color="Comment" ruleSet="CommentMarkerSet" multiline="true">
+            <Begin>/\*</Begin>
+            <End>\*/</End>
+        </Span>
+
+        <Keywords color="Keywords">
+            <Word>else</Word>
+            <Word>if</Word>
+            <Word>then</Word>
+            <Word>case</Word>
+            <Word>fun</Word>
+            <Word>val</Word>
+            <Word>while</Word>
+            <Word>end</Word>
+            <Word>let</Word>
+        </Keywords>
+
+        <Keywords color="Types">
+            <Word>unit</Word>
+            <Word>bool</Word>
+            <Word>char</Word>
+            <Word>int</Word>
+        </Keywords>
+
+        <Keywords color="TrueFalse">
+            <Word>true</Word>
+            <Word>false</Word>
+        </Keywords>
+
+        <Keywords color="ContextKeywords">
+            <Word>in</Word>
+            <Word>of</Word>
+        </Keywords>
+
+        <Keywords color="Data">
+            <Word>datatype</Word>
+        </Keywords>
+    </RuleSet>
+
+
+</SyntaxDefinition>

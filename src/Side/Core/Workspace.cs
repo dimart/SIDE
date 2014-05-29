@@ -26,6 +26,8 @@ namespace Side.Core
         private string _document;
         private const string _title = "Simple IDE";
 
+        private OpenFileDialog openFileDialog;
+
         #region CTOR
 
         public Workspace(IUnityContainer container, IEventAggregator eventAggregator)
@@ -67,6 +69,62 @@ namespace Side.Core
 
         #endregion
 
+        #region Commands
+        public ICommand OpenFileCommand
+        {
+            get { return new DelegateCommand(OpenFile, () => true); }
+        }
+        #endregion
+
+        #region CommandsHandlers
+
+        private void OpenFile()
+        {
+            string path = String.Empty;
+            Stream myStream = null;
+            openFileDialog = new OpenFileDialog();
+
+            var result = openFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    myStream = openFileDialog.OpenFile();
+                    using (myStream)
+                    {
+                        using (StreamReader reader = new StreamReader(myStream))
+                        {
+                            path = reader.ReadLine();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    var logger = _container.Resolve<ILoggerService>();
+                    logger.Log("Error: Could not read file from disk. Original error: " + ex.Message, LogCategory.Error, LogPriority.High);
+                }
+                string filePath = openFileDialog.FileName;
+                string folderPath = Path.GetDirectoryName(filePath);
+
+                var vm = _container.Resolve<CodeViewModel>();
+                var model = _container.Resolve<CodeModel>();
+                var view = _container.Resolve<CodeView>();
+
+                model.Code.UndoStack.ClearAll();
+                model.Code.Text = File.ReadAllText(filePath);
+                vm.Model = model;
+                vm.View = view;
+                vm.Title = Path.GetFileName(filePath);
+                vm.View.DataContext = model;
+
+                Documents.Add(vm);
+                ActiveDocument = vm;
+            }
+        }
+        #endregion
+
+        #region Events
         private void ContentChanged(CodeViewModel model)
         {
             _document = model == null ? "" : model.Title;
@@ -101,5 +159,6 @@ namespace Side.Core
                 this.ActiveDocument = null;
             }
         }
+        #endregion
     }
 }
