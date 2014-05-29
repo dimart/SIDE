@@ -1,4 +1,9 @@
 ﻿using Microsoft.Practices.Unity;
+using Microsoft.SqlServer.Server;
+using Suffle.Interpreter;
+using Parser;
+using Specification;
+
 using Side.Interfaces.Services;
 
 namespace Side.Core.Services
@@ -13,7 +18,8 @@ namespace Side.Core.Services
         }
         public string Interpret(string code)
         {
-            return "Allright!";
+            var inter = new Suffle.Interpreter.Expression.Interpreter();
+            return inter.EvaluateProgram(Suffle.Parser.parse(code));
         }
     }
 }
