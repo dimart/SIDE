@@ -89,7 +89,17 @@
                         </core:PanesTemplateSelector.CodeViewTemplate>
                     </core:PanesTemplateSelector>
                 </avalonDock:DockingManager.LayoutItemTemplateSelector>
-
+                
+                <avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+                    <core:PanesStyleSelector>
+                        <core:PanesStyleSelector.ContentStyle>
+                            <Style TargetType="{x:Type avalonDock:LayoutItem}">
+                                <Setter Property="Title" Value="{Binding Model.Title, Mode=TwoWay}" />
+                            </Style>
+                        </core:PanesStyleSelector.ContentStyle>
+                    </core:PanesStyleSelector>
+                </avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+                
                 <avalonDock:LayoutRoot>
                     <avalonDock:LayoutPanel x:Name="VerticalPanel" Orientation="Vertical">
                         <avalonDock:LayoutPanel x:Name="HorizontalPanel" Orientation="Horizontal">

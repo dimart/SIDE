@@ -40,10 +40,9 @@
     <Reference Include="FParsecCS">
       <HintPath>..\..\res\FParsecCS.dll</HintPath>
     </Reference>
-    <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="FSharp.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\FSharp\3.0\Runtime\v4.0\FSharp.Core.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\FSharp.Core.4.0.0\lib\FSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.AvalonEdit">
       <HintPath>..\..\packages\AvalonEdit.4.4.2.9744\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
@@ -123,6 +122,7 @@
     <Compile Include="Core\CodeBox\CodeModel.cs" />
     <Compile Include="Core\CodeBox\CodeViewModel.cs" />
     <Compile Include="Core\CoreModule.cs" />
+    <Compile Include="Core\PanesStyleSelector.cs" />
     <Compile Include="Core\PanesTemplateSelector.cs" />
     <Compile Include="Core\Services\Interpreter.cs" />
     <Compile Include="Core\Services\NLogService.cs" />
