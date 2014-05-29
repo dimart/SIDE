@@ -1,0 +1,30 @@
+fun :: int -> int
+fib1 x =
+    case x of
+    | 0 -> 0
+    | 1 -> 1
+    | _ -> fib1 (x - 1) + fib1 (x - 2)   
+
+fib2 :: int -> int
+fib2 x = 
+    let 
+        fun :: int -> int -> int -> int
+        fib' cur nxt n =
+            case n of
+            | 0 -> cur
+            | _      -> fib' nxt (cur + nxt) (n - 1)
+    in 
+        fib' 0 1 x
+
+fun :: int -> int
+fib3 x =
+    let 
+        fun :: int -> int -> int -> int -> int -> int
+        fib' a b p q count =
+            if (count == 0) then b
+            else if (count % 2 == 0) then fib' a b ((p*p) + (q*q)) ((q*q) + (2*p*q)) (count / 2)
+            else fib' ((b * q) + (a * q) + (a * p)) ((b * p) + (a * q)) p q (count - 1)
+            end 
+            end
+    in
+        fib' 1 0 0 1 x
