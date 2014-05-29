@@ -77,7 +77,7 @@ namespace Side.Core
 
         public ICommand InterpretCommand
         {
-            get { return new DelegateCommand(() => MessageBox.Show(_container.Resolve<IInterpreter>().Interpret(_container.Resolve<CodeModel>().Code.Text)), () => true); }
+            get { return new DelegateCommand(() => MessageBox.Show(_container.Resolve<IInterpreter>().Interpret(ActiveDocument.Model.Code.Text)), () => true); }
         }
         
         #endregion
